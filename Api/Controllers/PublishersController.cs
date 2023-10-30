@@ -22,14 +22,14 @@ public class PublishersController : ControllerBase
     [Route("{id:int}", Name = "GetPublisherById")]
     [Consumes(MediaTypeNames.Application.Json)]
     [ProducesResponseType(typeof(Publisher), StatusCodes.Status200OK)]
-    public async Task<ActionResult<string>> GetPublisherById(int id)
+    public async Task<ActionResult<string>> GetPublisherById(int publisherId)
     {
         return null;
     }
 
     [HttpPost(Name = "CreatePublisher")]
     [Consumes(MediaTypeNames.Application.Json)]
-    [ProducesResponseType(typeof(CreatePublisherResponse), StatusCodes.Status201Created)]
+    [ProducesResponseType(typeof(Publisher), StatusCodes.Status201Created)]
     public ActionResult<string> CreatePublisher(CreatePublisherRequest createPublisherRequest)
     {
         return null;
