@@ -1,4 +1,4 @@
-﻿namespace src.Responses;
+﻿namespace Api.Responses;
 
 public class Publisher
 {

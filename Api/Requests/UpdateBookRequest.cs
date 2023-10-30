@@ -1,4 +1,4 @@
-﻿namespace src.Requests;
+﻿namespace Api.Requests;
 
 public class UpdateBookRequest
 {

@@ -1,7 +1,9 @@
 using System.Net.Mime;
+using Api.Context;
+using Api.Entities;
+using Api.Requests;
 using Microsoft.AspNetCore.Mvc;
-using src.Requests;
-using src.Responses;
+using Microsoft.EntityFrameworkCore;
 
 namespace src.Controllers;
 
@@ -10,6 +12,10 @@ namespace src.Controllers;
 [Produces(MediaTypeNames.Application.Json)]
 public class PublishersController : ControllerBase
 {
+    public PublishersController(BookStoreDbContext bookStoreDbContext)
+    {
+    }
+
     [HttpGet(Name = "GetPublishers")]
     [Consumes(MediaTypeNames.Application.Json)]
     [ProducesResponseType(typeof(List<Publisher>), StatusCodes.Status200OK)]

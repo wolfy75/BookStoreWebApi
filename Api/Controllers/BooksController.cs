@@ -1,7 +1,7 @@
 ﻿using System.Net.Mime;
+using Api.Entities;
+using Api.Requests;
 using Microsoft.AspNetCore.Mvc;
-using src.Requests;
-using src.Responses;
 
 namespace src.Controllers;
 
