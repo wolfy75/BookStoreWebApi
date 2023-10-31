@@ -21,7 +21,7 @@ public class BookConfiguration : IEntityTypeConfiguration<Book>
 
       builder.HasOne(d => d.Publisher).WithMany(p => p.Books)
          .HasForeignKey(d => d.PublisherId)
-         .OnDelete(DeleteBehavior.ClientSetNull)
+         .OnDelete(DeleteBehavior.NoAction)
          .HasConstraintName("FK_Books_Publishers");
 
       builder.HasMany(d => d.Authors).WithMany(p => p.Books)
@@ -29,11 +29,11 @@ public class BookConfiguration : IEntityTypeConfiguration<Book>
             "AuthorBook",
             r => r.HasOne<Author>().WithMany()
                .HasForeignKey("AuthorId")
-               .OnDelete(DeleteBehavior.ClientSetNull)
+               .OnDelete(DeleteBehavior.Cascade)
                .HasConstraintName("FK_BookToAuthor_Authors"),
             l => l.HasOne<Book>().WithMany()
                .HasForeignKey("BookId")
-               .OnDelete(DeleteBehavior.ClientSetNull)
+               .OnDelete(DeleteBehavior.Cascade)
                .HasConstraintName("FK_BookToAuthor_Books"),
             j =>
             {
