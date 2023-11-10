@@ -24,13 +24,18 @@ public partial class BookStoreDbContext : DbContext
    {
       if (!optionsBuilder.IsConfigured)
       {
-         var builder = new ConfigurationBuilder()
-            .SetBasePath(Directory.GetCurrentDirectory())
-            .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true);
+         // var builder = new ConfigurationBuilder()
+         //    .SetBasePath(Directory.GetCurrentDirectory())
+         //    .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true);
+         //
+         // var configuration = builder.Build();
+         // var connectionString = configuration.GetConnectionString("BookStore");
+         // optionsBuilder.UseSqlServer(connectionString);
+         // optionsBuilder.LogTo(Console.WriteLine, LogLevel.Information);
 
-         var configuration = builder.Build();
-         var connectionString = configuration.GetConnectionString("BookStore");
-         optionsBuilder.UseSqlServer(connectionString);
+         // var contextOptionsBuilder = new DbContextOptionsBuilder<BookStoreDbContext>();
+         // contextOptionsBuilder.UseSqlServer(connectionString);
+         // var context = new BookStoreDbContext(contextOptionsBuilder.Options);
       }
    }
 

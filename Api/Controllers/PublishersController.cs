@@ -67,6 +67,7 @@ public class PublishersController : ControllerBase
     {
         var publisherToUpdate = await bookStoreDbContext.Publishers.FindAsync(updatePublisherRequest.Id);
         publisherToUpdate.Name = updatePublisherRequest.Name;
+        bookStoreDbContext.Publishers.Update(publisherToUpdate);
         await bookStoreDbContext.SaveChangesAsync();
         
         return NoContent();

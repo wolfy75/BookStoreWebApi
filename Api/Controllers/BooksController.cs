@@ -78,7 +78,8 @@ public class BooksController : ControllerBase
       bookToUpdate.DateOfPublish = updateBookRequest.DateOfPublish;
       bookToUpdate.PublisherId = updateBookRequest.PublisherId;
       bookToUpdate.Authors = authors;
-      
+
+      bookStoreDbContext.Books.Update(bookToUpdate);
       await bookStoreDbContext.SaveChangesAsync();
       
       return NoContent();
