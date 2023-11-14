@@ -39,6 +39,10 @@ public class BooksController : ControllerBase
          .Where(book => book.Authors.Any(author => author.Id == authorId))
          .ToListAsync();
 
+      await bookStoreDbContext.Entry(books[0])
+         .Collection(book => book.Authors)
+         .LoadAsync();
+      
       return Ok(books);
    }
 
